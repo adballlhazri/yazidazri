@@ -9,12 +9,38 @@ import { INITIAL_PROJECTS, USER_PROFILE } from './constants';
 const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<ViewState>('home');
   const [isScrolled, setIsScrolled] = useState(false);
-  const [projects, setProjects] = useState<Project[]>(INITIAL_PROJECTS);
+  
+  // Initialize projects from LocalStorage to simulate database persistence
+  const [projects, setProjects] = useState<Project[]>(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        const savedData = localStorage.getItem('elyazid_portfolio_projects');
+        if (savedData) {
+          return JSON.parse(savedData);
+        }
+      } catch (error) {
+        console.error("Error loading data from local storage:", error);
+      }
+    }
+    return INITIAL_PROJECTS;
+  });
   
   // Simulated Auth State
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loginPassword, setLoginPassword] = useState('');
   const [loginError, setLoginError] = useState(false);
+
+  // Save to LocalStorage whenever projects change
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        localStorage.setItem('elyazid_portfolio_projects', JSON.stringify(projects));
+      } catch (error) {
+        console.error("Error saving to local storage (Storage might be full):", error);
+        alert("Warning: Could not save changes. Storage might be full (too many large images).");
+      }
+    }
+  }, [projects]);
 
   useEffect(() => {
     const handleScroll = () => {
