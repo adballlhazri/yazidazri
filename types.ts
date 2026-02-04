@@ -5,7 +5,8 @@ export interface Project {
   imageUrl: string;
   technologies: string[];
   category: 'Mobile' | 'PC' | 'VR' | 'Console';
-  link?: string;
+  link: string;
+  status: 'available' | 'coming-soon';
 }
 
 export interface UserProfile {

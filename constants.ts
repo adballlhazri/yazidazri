@@ -11,26 +11,72 @@ export const USER_PROFILE: UserProfile = {
 export const INITIAL_PROJECTS: Project[] = [
   {
     id: '1',
-    title: 'Neon Cyber Racer',
-    description: 'A high-speed infinite racer set in a procedural cyberpunk city. Features custom shaders and reactive audio systems.',
-    imageUrl: 'https://picsum.photos/800/600?random=1',
+    title: 'R-OVER RACE',
+    description: 'racing game',
+    imageUrl: '/images/rover-race.webp',
     technologies: ['Unity', 'C#', 'Shader Graph'],
-    category: 'PC'
+    category: 'PC',
+    link: 'https://play.google.com/store/apps/details?id=com.fdetak.driftx',
+    status: 'available'
   },
   {
     id: '2',
-    title: 'Mystic Quest RPG',
-    description: 'An open-world RPG with a complex inventory system and dynamic quest generation using scriptable objects.',
-    imageUrl: 'https://picsum.photos/800/600?random=2',
-    technologies: ['Unity', 'C#', 'Dialogue System'],
-    category: 'Mobile'
+    title: 'UNKNOWN SHOOTER',
+    description: 'SHOOTER GAME',
+    imageUrl: '/images/Screenshot_20220516-180135.png',
+    technologies: ['Unity', 'C#'],
+    category: 'PC',
+    link: 'https://www.mediafire.com/file/7b224m5hs9so6ct/unknown_shooter_beta.zip/file',
+    status: 'available'
   },
   {
     id: '3',
-    title: 'Space Frontier VR',
-    description: 'Immersive VR space exploration simulator designed for Oculus Quest 2. Optimized for mobile VR performance.',
-    imageUrl: 'https://picsum.photos/800/600?random=3',
-    technologies: ['Unity', 'XR Interaction Toolkit', 'Oculus SDK'],
-    category: 'VR'
-  }
+    title: 'FORZ DRIVE',
+    description: '',
+    imageUrl: '/images/Screenshot_20230513-205132.png',
+    technologies: ['Unity', 'C#'],
+    category: 'PC',
+    link: 'https://www.mediafire.com/file/r2i6ekyjwgby42d/forzspeed.apk/file',
+    status: 'available'
+  },
+    {
+    id: '4',
+    title: 'BATTEL ROYALE',
+    description: '',
+    imageUrl: '/images/Screenshot_20220616-221242.png',
+    technologies: ['Unity', 'C#'],
+    category: 'PC',
+    link: 'https://example.com/rov11er-race',
+    status: 'coming-soon'
+  },
+      {
+    id: '5',
+    title: 'powerfire',
+    description: '',
+    imageUrl: '/images/Capture.png',
+    technologies: ['Unity', 'C#'],
+    category: 'PC',
+    link: 'https://yazid-azri.itch.io/powerfire',
+    status: 'available'
+  },
+      {
+    id: '6',
+    title: 'ball',
+    description: '',
+    imageUrl: '/images/Screenshot_20230506-170741.png',
+    technologies: ['Unity', 'C#'],
+    category: 'PC',
+    link: 'https://www.mediafire.com/file/g02wih2dhgu8kfo/ball.apk/file',
+    status: 'available'
+  },
+       {
+    id: '7',
+    title: 'forz speed',
+    description: '',
+    imageUrl: '/images/Screenshot_20230428-184252.png',
+    technologies: ['Unity', 'C#'],
+    category: 'PC',
+    link: '',
+    status: 'coming-soon'
+  },
 ];

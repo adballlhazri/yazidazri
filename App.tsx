@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+    import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Portfolio from './components/Portfolio';
@@ -10,37 +10,16 @@ const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<ViewState>('home');
   const [isScrolled, setIsScrolled] = useState(false);
   
-  // Initialize projects from LocalStorage to simulate database persistence
-  const [projects, setProjects] = useState<Project[]>(() => {
-    if (typeof window !== 'undefined') {
-      try {
-        const savedData = localStorage.getItem('elyazid_portfolio_projects');
-        if (savedData) {
-          return JSON.parse(savedData);
-        }
-      } catch (error) {
-        console.error("Error loading data from local storage:", error);
-      }
-    }
-    return INITIAL_PROJECTS;
-  });
+  // No longer using LocalStorage - reading directly from files
+  const [projects, setProjects] = useState<Project[]>(INITIAL_PROJECTS);
   
   // Simulated Auth State
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loginPassword, setLoginPassword] = useState('');
   const [loginError, setLoginError] = useState(false);
 
-  // Save to LocalStorage whenever projects change
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      try {
-        localStorage.setItem('elyazid_portfolio_projects', JSON.stringify(projects));
-      } catch (error) {
-        console.error("Error saving to local storage (Storage might be full):", error);
-        alert("Warning: Could not save changes. Storage might be full (too many large images).");
-      }
-    }
-  }, [projects]);
+  // Removed LocalStorage Effect logic
+
 
   useEffect(() => {
     const handleScroll = () => {
